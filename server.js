@@ -16,8 +16,8 @@ app.get("/members", (req, res) => {
     }
 })
 
-app.get("/members/:member", (req, res) => {
-    const findMember = data.results.find(member => member.email === req.params.member);
+app.get("/members/:email", (req, res) => {
+    const findMember = data.results.find(member => member.email === req.params.email);
 
     if(!findMember){
         res.status(404).json({message: "Member not found"});
